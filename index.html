@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -25,7 +24,7 @@
 
     html {
       scroll-behavior: smooth;
-     scroll-padding-top: 100px;
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -40,31 +39,31 @@
       text-decoration: none;
     }
 
-    button, a {
+    button,
+    a {
       -webkit-tap-highlight-color: transparent;
     }
 
-    a:focus-visible, button:focus-visible {
+    a:focus-visible,
+    button:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 4px;
     }
 
-    
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 22px 8%;
-  background: rgba(16, 16, 16, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
-}
-
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 8%;
+      background: rgba(16, 16, 16, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    }
 
     .logo {
       font-size: 24px;
@@ -83,87 +82,79 @@ header {
       flex-wrap: wrap;
     }
 
-   
-nav a {
-  position: relative;
-  transition: color 0.3s ease;
-}
+    nav a {
+      position: relative;
+      transition: color 0.3s ease;
+    }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 10px var(--accent);
-}
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px var(--accent);
+    }
 
-
-
-nav a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
 
     nav a:hover {
       color: var(--accent);
     }
 
-    
+    .hero {
+      min-height: 76vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 8%;
+      position: relative;
+      overflow: hidden;
+      background-color: #101010;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(16, 16, 16, 0.65) 0%,
+          rgba(16, 16, 16, 0.25) 100%
+        ),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
 
-.hero {
-  min-height: 76vh;
-  display: flex;
-  align-items: center;
-  padding: 80px 8%;
-  position: relative;
-  overflow: hidden;
+    .hero-content {
+      max-width: 760px;
+      position: relative;
+      z-index: 1;
+    }
 
-  background-color: #101010;
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(16, 16, 16, 0.65) 0%,
-      rgba(16, 16, 16, 0.25) 100%
-    ),
-    url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+    .hero-content h1 {
+      text-shadow: 0 4px 28px rgba(0, 0, 0, 0.45);
+    }
 
+    .hero-content .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid rgba(192, 132, 252, 0.35);
+      border-radius: 6px;
+      background: rgba(16, 16, 16, 0.55);
+    }
 
-   
-.hero-content {
-  max-width: 760px;
-  position: relative;
-  z-index: 1;
-}
+    .hero-content p {
+      color: #e2ded8;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+    }
 
-.hero-content h1 {
-  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.45);
-}
-
-.hero-content .eyebrow {
-  display: inline-block;
-  padding: 8px 12px;
-  border: 1px solid rgba(192, 132, 252, 0.35);
-  border-radius: 6px;
-  background: rgba(16, 16, 16, 0.55);
-}
-
-.hero-content p {
-  color: #e2ded8;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
-}
-
-
-    .eyebrow, .section-label {
+    .eyebrow,
+    .section-label {
       color: var(--accent);
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -188,111 +179,90 @@ nav a:hover::after {
       font-size: 18px;
     }
 
-    
-.button {
-  display: inline-block;
-  background: linear-gradient(135deg, #a855f7, #7c3aed);
-  color: #ffffff;
-  padding: 14px 26px;
-  margin-top: 28px;
-  border: 1px solid rgba(216, 180, 254, 0.5);
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  cursor: pointer;
-  box-shadow: 0 0 18px rgba(168, 85, 247, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease,
-              filter 0.3s ease;
-}
+    .button {
+      display: inline-block;
+      background: linear-gradient(135deg, #a855f7, #7c3aed);
+      color: #ffffff;
+      padding: 14px 26px;
+      margin-top: 28px;
+      border: 1px solid rgba(216, 180, 254, 0.5);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 0 18px rgba(168, 85, 247, 0.25);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+    }
 
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.5),
+        0 0 42px rgba(168, 85, 247, 0.25);
+      filter: brightness(1.18);
+    }
 
+    .service .button:hover {
+      background: linear-gradient(135deg, #c084fc, #7c3aed);
+    }
 
- 
-.button:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 0 20px rgba(168, 85, 247, 0.5),
-    0 0 42px rgba(168, 85, 247, 0.25);
-  filter: brightness(1.18);
-}
+    .button:active {
+      transform: translateY(0) scale(0.98);
+    }
 
-.service .button:hover {
-  background: linear-gradient(135deg, #c084fc, #7c3aed);
-}
+    section {
+      padding: 75px 8%;
+    }
 
+    .gallery {
+      background: #101010;
+    }
 
-.button:active {
-  transform: translateY(0) scale(0.98);
-}
+    .gallery-intro {
+      max-width: 600px;
+      margin-top: -16px;
+      margin-bottom: 30px;
+      color: var(--muted);
+    }
 
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
 
-    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+      border: 1px solid #33263f;
+      border-radius: 12px;
+      background: #191919;
+    }
 
-    
-section {
-  padding: 75px 8%;
-}
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
 
-.gallery {
-  background: #101010;
-}
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
 
-.gallery-intro {
-  max-width: 600px;
-  margin-top: -16px;
-  margin-bottom: 30px;
-  color: var(--muted);
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  min-height: 300px;
-  border: 1px solid #33263f;
-  border-radius: 12px;
-  background: #191919;
-}
-
-.gallery-item img {
-  display: block;
-  width: 100%;
-  height: 340px;
-  object-fit: cover;
-  transition: transform 0.45s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.06);
-}
-
-
-.gallery-item figcaption {
- 
-
-padding: 16px;
-  color: #e9d5ff;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-}
-
-
-@media (max-width: 700px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-item img {
-    height: 300px;
-  }
-}
+    .gallery-item figcaption {
+      padding: 16px;
+      color: #e9d5ff;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+    }
 
     h2 {
       font-size: clamp(30px, 5vw, 46px);
@@ -306,45 +276,37 @@ padding: 16px;
       gap: 18px;
     }
 
-    
+    .service {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px;
+      background: linear-gradient(145deg, #1c1724, #151515);
+      border: 1px solid #33263f;
+      border-radius: 12px;
+      transition:
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
 
+    .service .button {
+      width: 100%;
+      margin-top: auto;
+      text-align: center;
+    }
 
-.service {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 28px;
-  background: linear-gradient(145deg, #1c1724, #151515);
-  border: 1px solid #33263f;
-  border-radius: 12px;
-  transition:
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
+    .service .price {
+      margin-bottom: 8px;
+    }
 
-.service .button {
-  width: 100%;
-  margin-top: auto;
-  text-align: center;
-}
-
-.service .price {
-  margin-bottom: 8px;
-}
-
-
-.service:hover {
-  border-color: #a855f7;
-  transform: translateY(-6px);
-  box-shadow:
-    0 12px 35px rgba(168, 85, 247, 0.18),
-    inset 0 0 20px rgba(168, 85, 247, 0.04);
-}
-
-
-
-   
+    .service:hover {
+      border-color: #a855f7;
+      transform: translateY(-6px);
+      box-shadow:
+        0 12px 35px rgba(168, 85, 247, 0.18),
+        inset 0 0 20px rgba(168, 85, 247, 0.04);
+    }
 
     .service h3 {
       margin-bottom: 10px;
@@ -363,13 +325,14 @@ padding: 16px;
       font-weight: bold;
     }
 
-   .about {
-  background: linear-gradient(135deg, #171020, #101010);
-  border-top: 1px solid #33263f;
-  border-bottom: 1px solid #33263f;
-}
+    .about {
+      background: linear-gradient(135deg, #171020, #101010);
+      border-top: 1px solid #33263f;
+      border-bottom: 1px solid #33263f;
+    }
 
-    .about p, .contact p {
+    .about p,
+    .contact p {
       color: var(--muted);
       max-width: 650px;
     }
@@ -390,20 +353,21 @@ padding: 16px;
     }
 
     .booking {
-  background:
-    radial-gradient(
-      ellipse at 85% 20%,
-      rgba(168, 85, 247, 0.2),
-      transparent 60%
-    ),
-    linear-gradient(135deg, #1c1427, #101010);
-  color: var(--text);
-  border-top: 1px solid #33263f;
-}
+      background:
+        radial-gradient(
+          ellipse at 85% 20%,
+          rgba(168, 85, 247, 0.2),
+          transparent 60%
+        ),
+        linear-gradient(135deg, #1c1427, #101010);
+      color: var(--text);
+      border-top: 1px solid #33263f;
+    }
 
     .booking .section-label {
-  color: #c084fc;
-}
+      color: #c084fc;
+    }
+
     .booking p {
       max-width: 600px;
     }
@@ -413,58 +377,61 @@ padding: 16px;
       color: white;
     }
 
-    #demoMessage {
-      margin-top: 16px;
-      font-weight: bold;
+    .booking-form {
+      display: grid;
+      gap: 10px;
+      max-width: 480px;
+      margin-top: 28px;
     }
-    
-.booking-form {
-  display: grid;
-  gap: 10px;
-  max-width: 480px;
-  margin-top: 28px;
-}
 
-.booking-form label {
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #e9d5ff;
-}
+    .booking-form label {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #e9d5ff;
+    }
 
-.booking-form input,
-.booking-form select {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #49345e;
-  border-radius: 8px;
-  background: #151019;
-  color: #ffffff;
-  font: inherit;
-}
+    .booking-form input,
+    .booking-form select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #49345e;
+      border-radius: 8px;
+      background: #151019;
+      color: #ffffff;
+      font: inherit;
+    }
 
-.booking-form input:focus,
-.booking-form select:focus {
-  outline: 2px solid #a855f7;
-  outline-offset: 2px;
-}
+    .booking-form input:focus,
+    .booking-form select:focus {
+      outline: 2px solid #a855f7;
+      outline-offset: 2px;
+    }
 
-.booking-form .button {
-  width: 100%;
-  margin-top: 18px;
-}
+    .booking-form .button {
+      width: 100%;
+      margin-top: 18px;
+    }
 
-.booking-note {
-  margin-top: 18px;
-  color: var(--muted);
-  font-size: 13px;
-}
+    .booking-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
 
-#demoMessage {
-  color: #d8b4fe;
-  overflow-wrap: anywhere;
-}
-
+    #demoMessage {
+      display: block;
+      min-height: 70px;
+      margin-top: 16px;
+      padding: 18px;
+      color: #f3e8ff;
+      background: #21132f;
+      border: 2px solid #a855f7;
+      border-radius: 10px;
+      box-shadow: 0 0 18px rgba(168, 85, 247, 0.35);
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
 
     footer {
       padding: 25px 8%;
@@ -473,120 +440,141 @@ padding: 16px;
       font-size: 13px;
     }
 
-@media (max-width: 700px) {
-  html {
-    scroll-padding-top: 150px;
-  }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
 
-  header {
-    flex-direction: column;
-    gap: 14px;
-    padding: 16px 6%;
-  }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  nav {
-    justify-content: center;
-  }
+    .hero-content {
+      animation: fadeUp 0.8s ease-out both;
+    }
 
-  .service .button {
-    width: 100%;
-    min-height: 48px;
-    padding: 14px 10px;
-    font-size: 12px;
-  }
+    @keyframes cardsAppear {
+      from {
+        opacity: 0;
+        translate: 0 18px;
+      }
 
-  .service {
-    width: 100%;
-  }
+      to {
+        opacity: 1;
+        translate: 0 0;
+      }
+    }
 
-  .gallery-item {
-    min-height: auto;
-  
-  }
+    .services .service {
+      animation: cardsAppear 0.65s ease-out both;
+    }
 
-  .logo {
-    font-size: 22px;
-  }
+    .services .service:nth-child(2) {
+      animation-delay: 0.15s;
+    }
 
-  nav {
-    gap: 12px 18px;
-    font-size: 14px;
-  }
+    .services .service:nth-child(3) {
+      animation-delay: 0.3s;
+    }
 
-  .hero {
-    padding: 65px 6%;
-    min-height: 65vh;
-    background-position: 60% center;
-  }
+    @media (max-width: 700px) {
+      html {
+        scroll-padding-top: 150px;
+      }
 
-  h1 {
-    font-size: clamp(40px, 11vw, 62px);
-    letter-spacing: -1px;
-  }
+      header {
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px 6%;
+      }
 
-  .hero p {
-    font-size: 16px;
-  }
+      nav {
+        justify-content: center;
+        gap: 12px 18px;
+        font-size: 14px;
+      }
 
-  section {
-    padding: 55px 6%;
-  }
+      .service .button {
+        width: 100%;
+        min-height: 48px;
+        padding: 14px 10px;
+        font-size: 12px;
+      }
 
-  .services,
-  .details {
-    grid-template-columns: 1fr;
-  }
+      .service {
+        width: 100%;
+        padding: 24px;
+      }
 
-  .service {
-    padding: 24px;
-  }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
 
-  .button {
-    max-width: 100%;
-    text-align: center;
-  }
-}
+      .gallery-item {
+        min-height: auto;
+      }
 
+      .gallery-item img {
+        height: 300px;
+      }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
+      .logo {
+        font-size: 22px;
+      }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      .hero {
+        padding: 65px 6%;
+        min-height: 65vh;
+        background-position: 60% center;
+      }
 
-.hero-content {
-  animation: fadeUp 0.8s ease-out both;
-}
+      h1 {
+        font-size: clamp(40px, 11vw, 62px);
+        letter-spacing: -1px;
+      }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-content {
-    animation: none;
-  }
-}
-  #demoMessage {
-  display: block;
-  min-height: 70px;
-  margin-top: 16px;
-  padding: 18px;
-  color: #f3e8ff;
-  background: #21132f;
-  border: 2px solid #a855f7;
-  border-radius: 10px;
-  box-shadow: 0 0 18px rgba(168, 85, 247, 0.35);
-  line-height: 1.7;
-  overflow-wrap: anywhere;
-}
- </style>
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+
+      .services,
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+
+      .hero-content,
+      .services .service {
+        animation: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
   <header>
     <a class="logo" href="#top" aria-label="BLACK LINE — на початок">
       BLACK <span>LINE</span>
@@ -618,17 +606,16 @@ padding: 16px;
         <a class="button" href="#booking">ЗАПИСАТИСЯ</a>
       </div>
     </section>
-    
-<section class="about" id="about">
-  <div class="section-label">ФІЛОСОФІЯ BLACK LINE</div>
-  <h2>Деталі мають значення.</h2>
-  <p>
-    BLACK LINE — концепція сучасного барбершопу для тих,
-    хто цінує якість, атмосферу та увагу до деталей.
-    Ми віримо, що гарний стиль починається з правильного підходу.
-  </p>
-</section>
 
+    <section class="about" id="about">
+      <div class="section-label">ФІЛОСОФІЯ BLACK LINE</div>
+      <h2>Деталі мають значення.</h2>
+      <p>
+        BLACK LINE — концепція сучасного барбершопу для тих,
+        хто цінує якість, атмосферу та увагу до деталей.
+        Ми віримо, що гарний стиль починається з правильного підходу.
+      </p>
+    </section>
 
     <section id="services">
       <div class="section-label">НАШІ ПОСЛУГИ</div>
@@ -638,77 +625,80 @@ padding: 16px;
         <article class="service">
           <h3>Чоловіча стрижка</h3>
           <p>Індивідуальний підхід до твого стилю.</p>
-          
-<div class="price">400 ₴</div>
-
-
-          <button class="button choose-service" type="button" data-service="Чоловіча стрижка">
-  ОБРАТИ ПОСЛУГУ
-</button>
+          <div class="price">400 ₴</div>
+          <button
+            class="button choose-service"
+            type="button"
+            data-service="Чоловіча стрижка"
+          >
+            ОБРАТИ ПОСЛУГУ
+          </button>
         </article>
 
         <article class="service">
           <h3>Стрижка + борода</h3>
           <p>Завершений образ і чіткі контури.</p>
           <div class="price">600 ₴</div>
-          
-<button class="button choose-service" type="button" data-service="Стрижка + борода">
-  ОБРАТИ ПОСЛУГУ
-</button>
-
+          <button
+            class="button choose-service"
+            type="button"
+            data-service="Стрижка + борода"
+          >
+            ОБРАТИ ПОСЛУГУ
+          </button>
         </article>
 
         <article class="service">
           <h3>Оформлення бороди</h3>
           <p>Форма, симетрія та акуратний вигляд.</p>
           <div class="price">250 ₴</div>
-          
-<button class="button choose-service" type="button" data-service="Оформлення бороди">
-  ОБРАТИ ПОСЛУГУ
-</button>
-
+          <button
+            class="button choose-service"
+            type="button"
+            data-service="Оформлення бороди"
+          >
+            ОБРАТИ ПОСЛУГУ
+          </button>
         </article>
       </div>
     </section>
 
-    
-<section class="gallery" id="gallery">
-  <div class="section-label">НАШІ РОБОТИ</div>
-  <h2>Стиль говорить за тебе.</h2>
-  <p class="gallery-intro">
-    Чіткі контури. Продумані деталі. Твій власний характер.
-  </p>
+    <section class="gallery" id="gallery">
+      <div class="section-label">НАШІ РОБОТИ</div>
+      <h2>Стиль говорить за тебе.</h2>
+      <p class="gallery-intro">
+        Чіткі контури. Продумані деталі. Твій власний характер.
+      </p>
 
-  <div class="gallery-grid">
-    <figure class="gallery-item">
-      <img
-        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
-        alt="Інтер'єр сучасного барбершопу"
-        loading="lazy"
-      >
-      <figcaption>АТМОСФЕРА BLACK LINE</figcaption>
-    </figure>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
+            alt="Інтер'єр сучасного барбершопу"
+            loading="lazy"
+          >
+          <figcaption>АТМОСФЕРА BLACK LINE</figcaption>
+        </figure>
 
-    <figure class="gallery-item">
-      <img
-        src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85"
-        alt="Чоловіча стрижка у барбершопі"
-        loading="lazy"
-      >
-      <figcaption>ТОЧНІСТЬ У ДЕТАЛЯХ</figcaption>
-    </figure>
+        <figure class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85"
+            alt="Чоловіча стрижка у барбершопі"
+            loading="lazy"
+          >
+          <figcaption>ТОЧНІСТЬ У ДЕТАЛЯХ</figcaption>
+        </figure>
 
-    <figure class="gallery-item">
-      <img
-        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
-        alt="Приклад чоловічого стилю"
-        loading="lazy"
-      >
-      <figcaption>ТВІЙ ІНДИВІДУАЛЬНИЙ СТИЛЬ</figcaption>
-    </figure>
-  </div>
-</section>
-
+        <figure class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
+            alt="Приклад чоловічого стилю"
+            loading="lazy"
+          >
+          <figcaption>ТВІЙ ІНДИВІДУАЛЬНИЙ СТИЛЬ</figcaption>
+        </figure>
+      </div>
+    </section>
 
     <section id="contact" class="contact">
       <div class="section-label">ЗАВІТАЙ ДО НАС</div>
@@ -731,174 +721,174 @@ padding: 16px;
       </div>
     </section>
 
-    
-<section class="booking" id="booking">
-  <div class="section-label">ТВІЙ НАСТУПНИЙ КРОК</div>
-  <h2>Час оновити стиль?</h2>
+    <section class="booking" id="booking">
+      <div class="section-label">ТВІЙ НАСТУПНИЙ КРОК</div>
+      <h2>Час оновити стиль?</h2>
 
-  <p class="booking-intro">
-    Заповни форму, щоб залишити заявку на запис до BLACK LINE.
-  </p>
+      <p class="booking-intro">
+        Заповни форму, щоб залишити заявку на запис до BLACK LINE.
+      </p>
 
-  <form id="bookingForm" class="booking-form">
-    <label for="clientName">Твоє ім'я</label>
-    <input
-      id="clientName"
-      name="name"
-      type="text"
-      placeholder="Як до тебе звертатися?"
-      autocomplete="name"
-      required
-    >
+      <form id="bookingForm" class="booking-form">
+        <label for="clientName">Твоє ім'я</label>
+        <input
+          id="clientName"
+          name="name"
+          type="text"
+          placeholder="Як до тебе звертатися?"
+          autocomplete="name"
+          required
+        >
 
-    <label for="clientPhone">Номер телефону</label>
-    
-    <input
-  id="clientPhone"
-  name="phone"
-  type="tel"
-  placeholder="+380XXXXXXXXX"
-  autocomplete="tel"
-  pattern="\+380[0-9]{9}"
-  title="Введи номер у форматі +380XXXXXXXXX, без пробілів"
-  required
->
+        <label for="clientPhone">Номер телефону</label>
+        <input
+          id="clientPhone"
+          name="phone"
+          type="tel"
+          placeholder="+380XXXXXXXXX"
+          autocomplete="tel"
+          pattern="\+380[0-9]{9}"
+          title="Введи номер у форматі +380XXXXXXXXX, без пробілів"
+          required
+        >
 
-    <label for="service">Послуга</label>
-    <select id="service" name="service" required>
-      <option value="">Обери послугу</option>
-      <option value="Чоловіча стрижка">Чоловіча стрижка — 400 ₴</option>
-      <option value="Стрижка + борода">Стрижка + борода — 600 ₴</option>
-      <option value="Оформлення бороди">Оформлення бороди — 250 ₴</option>
-    </select>
+        <label for="service">Послуга</label>
+        <select id="service" name="service" required>
+          <option value="">Обери послугу</option>
+          <option value="Чоловіча стрижка">Чоловіча стрижка — 400 ₴</option>
+          <option value="Стрижка + борода">Стрижка + борода — 600 ₴</option>
+          <option value="Оформлення бороди">Оформлення бороди — 250 ₴</option>
+        </select>
 
-    <label for="bookingDate">Бажана дата</label>
-    <input
-      id="bookingDate"
-      name="date"
-      type="date"
-      required
-    >
+        <label for="bookingDate">Бажана дата</label>
+        <input
+          id="bookingDate"
+          name="date"
+          type="date"
+          required
+        >
 
-    <label for="bookingTime">Бажаний час</label>
-    <select id="bookingTime" name="time" required>
-      <option value="">Обери час</option>
-      <option>10:00</option>
-      <option>11:00</option>
-      <option>12:00</option>
-      <option>13:00</option>
-      <option>14:00</option>
-      <option>15:00</option>
-      <option>16:00</option>
-      <option>17:00</option>
-      <option>18:00</option>
-      <option>19:00</option>
-    </select>
+        <label for="bookingTime">Бажаний час</label>
+        <select id="bookingTime" name="time" required>
+          <option value="">Обери час</option>
+          <option>10:00</option>
+          <option>11:00</option>
+          <option>12:00</option>
+          <option>13:00</option>
+          <option>14:00</option>
+          <option>15:00</option>
+          <option>16:00</option>
+          <option>17:00</option>
+          <option>18:00</option>
+          <option>19:00</option>
+        </select>
 
-    <button class="button" type="submit">
-      ЗАЛИШИТИ ЗАЯВКУ
-    </button>
+        <button class="button" type="submit">
+          ЗАЛИШИТИ ЗАЯВКУ
+        </button>
 
-    <p id="demoMessage" role="status" aria-live="polite"></p>
-  </form>
+        <p id="demoMessage" role="status" aria-live="polite"></p>
+      </form>
 
-  <p class="booking-note">
-    Демоверсія: заявка поки не надсилається адміністратору.
-  </p>
-</section>
-
+      <p class="booking-note">
+        Демоверсія: заявка поки не надсилається адміністратору.
+      </p>
+    </section>
   </main>
 
   <footer>
     © 2026 BLACK LINE · Демонстраційний проєкт для навчання
   </footer>
 
+  <script>
+    const bookingForm = document.getElementById("bookingForm");
+    const demoMessage = document.getElementById("demoMessage");
+    const bookingDate = document.getElementById("bookingDate");
+    const bookingTime = document.getElementById("bookingTime");
+    const serviceSelect = document.getElementById("service");
 
-<script>
-  const bookingForm = document.getElementById("bookingForm");
-  const demoMessage = document.getElementById("demoMessage");
-  const bookingDate = document.getElementById("bookingDate");
-  const bookingTime = document.getElementById("bookingTime");
-  const serviceSelect = document.getElementById("service");
+    function updateBookingTimes() {
+      const now = new Date();
+      const localToday = new Date(
+        now.getTime() - now.getTimezoneOffset() * 60000
+      ).toISOString().split("T")[0];
 
-  function updateBookingTimes() {
-    const now = new Date();
-    const localToday = new Date(
-      now.getTime() - now.getTimezoneOffset() * 60000
-    ).toISOString().split("T")[0];
+      bookingDate.min = localToday;
 
-    bookingDate.min = localToday;
+      const selectedDate = bookingDate.value;
+      const day = selectedDate
+        ? new Date(selectedDate + "T12:00:00").getDay()
+        : -1;
+      const closingHour = day === 0 ? 17 : 20;
 
-    const selectedDate = bookingDate.value;
-    const day = new Date(selectedDate + "T12:00:00").getDay();
-    const closingHour = day === 0 ? 17 : 20;
+      Array.from(bookingTime.options).forEach(function (option) {
+        if (!option.value) {
+          return;
+        }
 
-    Array.from(bookingTime.options).forEach(function (option) {
-      if (!option.value) {
+        const hour = Number(option.value.split(":")[0]);
+        const slotDate = selectedDate
+          ? new Date(selectedDate + "T" + option.value)
+          : null;
+
+        option.disabled =
+          !selectedDate ||
+          hour >= closingHour ||
+          slotDate <= now;
+      });
+
+      if (bookingTime.selectedOptions[0]?.disabled) {
+        bookingTime.value = "";
+      }
+    }
+
+    bookingDate.addEventListener("change", updateBookingTimes);
+    bookingTime.addEventListener("focus", updateBookingTimes);
+    window.addEventListener("pageshow", updateBookingTimes);
+    updateBookingTimes();
+
+    document.querySelectorAll(".choose-service").forEach(function (button) {
+      button.addEventListener("click", function () {
+        serviceSelect.value = button.dataset.service;
+
+        document.getElementById("booking").scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "instant"
+            : "smooth"
+        });
+      });
+    });
+
+    bookingForm.addEventListener("input", function () {
+      demoMessage.textContent = "";
+    });
+
+    bookingForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      updateBookingTimes();
+
+      if (!bookingForm.reportValidity()) {
         return;
       }
 
-      const hour = Number(option.value.split(":")[0]);
-      const slotDate = new Date(selectedDate + "T" + option.value);
+      const formData = new FormData(bookingForm);
+      const name = formData.get("name").trim();
+      const date = formData.get("date").split("-").reverse().join(".");
+      const time = formData.get("time");
+      const service = formData.get("service");
 
-      option.disabled =
-        !selectedDate ||
-        hour >= closingHour ||
-        slotDate <= now;
+      if (!name) {
+        demoMessage.textContent = "Введи своє ім’я.";
+        document.getElementById("clientName").focus();
+        return;
+      }
+
+      demoMessage.textContent =
+        name + ", твій вибір: " + service +
+        " — " + date + " о " + time +
+        ". Це демонстрація: заявку не надіслано.";
     });
-
-    if (bookingTime.selectedOptions[0]?.disabled) {
-      bookingTime.value = "";
-    }
-  }
-
-  bookingDate.addEventListener("change", updateBookingTimes);
-  bookingTime.addEventListener("focus", updateBookingTimes);
-  window.addEventListener("pageshow", updateBookingTimes);
-  updateBookingTimes();
-
-  document.querySelectorAll(".choose-service").forEach(function (button) {
-    button.addEventListener("click", function () {
-      serviceSelect.value = button.dataset.service;
-
-      document.getElementById("booking").scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "instant"
-          : "smooth"
-      });
-    });
-  });
-
-  bookingForm.addEventListener("input", function () {
-    demoMessage.textContent = "";
-  });
-
-  bookingForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    updateBookingTimes();
-
-    if (!bookingForm.reportValidity()) {
-      return;
-    }
-
-    const formData = new FormData(bookingForm);
-    const name = formData.get("name").trim();
-    const date = formData.get("date").split("-").reverse().join(".");
-    const time = formData.get("time");
-    const service = formData.get("service");
-
-    if (!name) {
-      demoMessage.textContent = "Введи своє ім’я.";
-      document.getElementById("clientName").focus();
-      return;
-    }
-
-    demoMessage.textContent =
-      name + ", твій вибір: " + service +
-      " — " + date + " о " + time +
-      ". Це демонстрація: заявку не надіслано.";
-  });
-</script>
+  </script>
 </body>
 </html>
