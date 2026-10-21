@@ -223,6 +223,62 @@ nav a:hover::after {
     
 
     section {
+.gallery {
+  background: #101010;
+}
+
+.gallery-intro {
+  max-width: 600px;
+  margin-top: -16px;
+  margin-bottom: 30px;
+  color: var(--muted);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  border: 1px solid #33263f;
+  border-radius: 12px;
+  background: #191919;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-item figcaption {
+  padding: 16px;
+  color: #e9d5ff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 700px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    height: 300px;
+  }
+}
+
       padding: 75px 8%;
     }
 
@@ -482,6 +538,7 @@ nav a:hover::after {
 
     <nav aria-label="Головна навігація">
       <a href="#services">Послуги</a>
+      <a href="#gallery">Наші роботи</a>
       <a href="#about">Про нас</a>
       <a href="#contact">Контакти</a>
     </nav>
@@ -531,16 +588,44 @@ nav a:hover::after {
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="section-label">ФІЛОСОФІЯ BLACK LINE</div>
-      <h2>Деталі мають значення.</h2>
+    
+<section class="gallery" id="gallery">
+  <div class="section-label">НАШІ РОБОТИ</div>
+  <h2>Стиль говорить за тебе.</h2>
+  <p class="gallery-intro">
+    Чіткі контури. Продумані деталі. Твій власний характер.
+  </p>
 
-      <p>
-        BLACK LINE — концепція сучасного барбершопу для тих,
-        хто цінує якість, атмосферу та увагу до деталей.
-        Ми віримо, що гарний стиль починається з правильного підходу.
-      </p>
-    </section>
+  <div class="gallery-grid">
+    <figure class="gallery-item">
+      <img
+        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
+        alt="Інтер'єр сучасного барбершопу"
+        loading="lazy"
+      >
+      <figcaption>АТМОСФЕРА BLACK LINE</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img
+        src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85"
+        alt="Чоловіча стрижка у барбершопі"
+        loading="lazy"
+      >
+      <figcaption>ТОЧНІСТЬ У ДЕТАЛЯХ</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img
+        src="https://images.unsplash.com/photo- barber-placeholder?auto=format&fit=crop&w=900&q=85"
+        alt="Приклад чоловічого стилю"
+        loading="lazy"
+      >
+      <figcaption>ТВІЙ ІНДИВІДУАЛЬНИЙ СТИЛЬ</figcaption>
+    </figure>
+  </div>
+</section>
+
 
     <section id="contact" class="contact">
       <div class="section-label">ЗАВІТАЙ ДО НАС</div>
