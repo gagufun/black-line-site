@@ -838,8 +838,11 @@ function updateBookingTimes() {
       return;
     }
 
-    const hour = Number(option.value.split(":")[0]);
-    option.disabled = hour >= closingHour;
+   const hour = Number(option.value.split(":")[0]);
+const slotDate = new Date(selectedDate + "T" + option.value);
+
+option.disabled =
+  hour >= closingHour || slotDate <= new Date();
   });
 
   if (bookingTime.selectedOptions[0]?.disabled) {
