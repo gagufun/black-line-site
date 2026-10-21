@@ -814,82 +814,87 @@ padding: 16px;
   const bookingForm = document.getElementById("bookingForm");
   const demoMessage = document.getElementById("demoMessage");
   const bookingDate = document.getElementById("bookingDate");
-
-  const today = new Date();
-  const localToday = new Date(
-    today.getTime() - today.getTimezoneOffset() * 60000
-  ).toISOString().split("T")[0];
-
-  bookingDate.min = localToday;
   const bookingTime = document.getElementById("bookingTime");
+  const serviceSelect = document.getElementById("service");
 
-function updateBookingTimes() {
-  const selectedDate = bookingDate.value;
+  function updateBookingTimes() {
+    const now = new Date();
+    const localToday = new Date(
+      now.getTime() - now.getTimezoneOffset() * 60000
+    ).toISOString().split("T")[0];
 
-  if (!selectedDate) {
-    return;
-  }
+    bookingDate.min = localToday;
 
-  const day = new Date(selectedDate + "T12:00:00").getDay();
-  const closingHour = day === 0 ? 17 : 20;
+    const selectedDate = bookingDate.value;
+    const day = new Date(selectedDate + "T12:00:00").getDay();
+    const closingHour = day === 0 ? 17 : 20;
 
-  Array.from(bookingTime.options).forEach(function (option) {
-    if (!option.value) {
-      return;
+    Array.from(bookingTime.options).forEach(function (option) {
+      if (!option.value) {
+        return;
+      }
+
+      const hour = Number(option.value.split(":")[0]);
+      const slotDate = new Date(selectedDate + "T" + option.value);
+
+      option.disabled =
+        !selectedDate ||
+        hour >= closingHour ||
+        slotDate <= now;
+    });
+
+    if (bookingTime.selectedOptions[0]?.disabled) {
+      bookingTime.value = "";
     }
-
-  const hour = Number(option.value.split(":")[0]);
-const slotDate = new Date(selectedDate + "T" + option.value);
-    option.disabled =
-  hour >= closingHour || slotDate <= new Date();
-
-option.disabled =
-  hour >= closingHour || slotDate <= new Date();
-
-option.disabled =
-  hour >= closingHour || slotDate <= new Date();
-
-option.disabled =
-  hour >= closingHour || slotDate <= new Date();
-
-option.disabled =
-  hour >= closingHour || slotDate <= new Date();
-  });
-
-  if (bookingTime.selectedOptions[0]?.disabled) {
-    bookingTime.value = "";
   }
-}
 
-bookingDate.addEventListener("change", updateBookingTimes);
-updateBookingTimes();
-  
-document.querySelectorAll(".choose-service").forEach(function (button) {
-  button.addEventListener("click", function () {
-    const serviceSelect = document.getElementById("service");
-    serviceSelect.value = button.dataset.service;
+  bookingDate.addEventListener("change", updateBookingTimes);
+  bookingTime.addEventListener("focus", updateBookingTimes);
+  window.addEventListener("pageshow", updateBookingTimes);
+  updateBookingTimes();
 
-    document.getElementById("booking").scrollIntoView({
-      behavior: "smooth"
+  document.querySelectorAll(".choose-service").forEach(function (button) {
+    button.addEventListener("click", function () {
+      serviceSelect.value = button.dataset.service;
+
+      document.getElementById("booking").scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth"
+      });
     });
   });
-});
 
+  bookingForm.addEventListener("input", function () {
+    demoMessage.textContent = "";
+  });
 
   bookingForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
+    updateBookingTimes();
+
+    if (!bookingForm.reportValidity()) {
+      return;
+    }
+
     const formData = new FormData(bookingForm);
     const name = formData.get("name").trim();
+    const date = formData.get("date").split("-").reverse().join(".");
+    const time = formData.get("time");
+    const service = formData.get("service");
 
-   const date = formData.get("date").split("-").reverse().join(".");
-const time = formData.get("time");
-const service = formData.get("service");
+    if (!name) {
+      demoMessage.textContent = "Введи своє ім’я.";
+      document.getElementById("clientName").focus();
+      return;
+    }
 
-demoMessage.textContent =
-  name + ", твій вибір: " + service +
-  " — " + date + " о " + time +
-  ". Це демонстрація: заявку не надіслано.";
+    demoMessage.textContent =
+      name + ", твій вибір: " + service +
+      " — " + date + " о " + time +
+      ". Це демонстрація: заявку не надіслано.";
+  });
 </script>
 
 </body>
