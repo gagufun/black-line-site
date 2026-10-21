@@ -821,6 +821,34 @@ padding: 16px;
   ).toISOString().split("T")[0];
 
   bookingDate.min = localToday;
+  const bookingTime = document.getElementById("bookingTime");
+
+function updateBookingTimes() {
+  const selectedDate = bookingDate.value;
+
+  if (!selectedDate) {
+    return;
+  }
+
+  const day = new Date(selectedDate + "T12:00:00").getDay();
+  const closingHour = day === 0 ? 17 : 20;
+
+  Array.from(bookingTime.options).forEach(function (option) {
+    if (!option.value) {
+      return;
+    }
+
+    const hour = Number(option.value.split(":")[0]);
+    option.disabled = hour >= closingHour;
+  });
+
+  if (bookingTime.selectedOptions[0]?.disabled) {
+    bookingTime.value = "";
+  }
+}
+
+bookingDate.addEventListener("change", updateBookingTimes);
+updateBookingTimes();
   
 document.querySelectorAll(".choose-service").forEach(function (button) {
   button.addEventListener("click", function () {
