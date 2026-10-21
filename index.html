@@ -749,13 +749,16 @@ padding: 16px;
 
     <label for="clientPhone">Номер телефону</label>
     <input
-      id="clientPhone"
-      name="phone"
-      type="tel"
-      placeholder="+380..."
-      autocomplete="tel"
-      required
-    >
+    <input
+  id="clientPhone"
+  name="phone"
+  type="tel"
+  placeholder="+380XXXXXXXXX"
+  autocomplete="tel"
+  pattern="\+380[0-9]{9}"
+  title="Введи номер у форматі +380XXXXXXXXX, без пробілів"
+  required
+>
 
     <label for="service">Послуга</label>
     <select id="service" name="service" required>
