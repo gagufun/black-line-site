@@ -882,11 +882,14 @@ document.querySelectorAll(".choose-service").forEach(function (button) {
     const formData = new FormData(bookingForm);
     const name = formData.get("name").trim();
 
-    demoMessage.textContent =
-      "Демо успішне, " + name +
-      "! Форма заповнена, але заявка ще не надіслана. " +
-      "Для реального запису потрібно підключити Telegram і пошту.";
-  });
+   const date = formData.get("date").split("-").reverse().join(".");
+const time = formData.get("time");
+const service = formData.get("service");
+
+demoMessage.textContent =
+  name + ", твій вибір: " + service +
+  " — " + date + " о " + time +
+  ". Це демонстрація: заявку не надіслано.";
 </script>
 
 </body>
