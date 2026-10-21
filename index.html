@@ -138,9 +138,30 @@ nav a:hover::after {
 }
 
 
-    .hero-content {
-      max-width: 760px;
-    }
+   
+.hero-content {
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.45);
+}
+
+.hero-content .eyebrow {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+  border-radius: 6px;
+  background: rgba(16, 16, 16, 0.55);
+}
+
+.hero-content p {
+  color: #e2ded8;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
 
     .eyebrow, .section-label {
       color: var(--accent);
@@ -185,10 +206,17 @@ nav a:hover::after {
               filter 0.3s ease;
 }
 
+
 .button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
-  filter: brightness(1.12);
+  box-shadow:
+    0 0 18px rgba(168, 85, 247, 0.45),
+    0 0 38px rgba(168, 85, 247, 0.22);
+  filter: brightness(1.15);
+}
+
+.button:active {
+  transform: translateY(0) scale(0.98);
 }
 
 
