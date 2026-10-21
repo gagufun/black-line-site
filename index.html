@@ -560,26 +560,19 @@ padding: 16px;
   }
 }
 
+.hero-content {
+  animation: fadeUp 0.8s ease-out both;
+}
 
-    .hero-content {
-      animation: fadeUp 0.8s ease-out both;
-    }
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition-duration: 0.01ms !important;
-      }
-
-      .hero-content {
-        animation: none;
-      }
-    }
-<style>
-    #demoMessage:not(:empty) {
+@media (prefers-reduced-motion: reduce) {
+  .hero-content {
+    animation: none;
+  }
+}
+  #demoMessage {
   display: block;
+  min-height: 70px;
+  margin-top: 16px;
   padding: 18px;
   color: #f3e8ff;
   background: #21132f;
@@ -587,8 +580,9 @@ padding: 16px;
   border-radius: 10px;
   box-shadow: 0 0 18px rgba(168, 85, 247, 0.35);
   line-height: 1.7;
+  overflow-wrap: anywhere;
 }
-  </style>
+ </style>
 </head>
 
 <body>
