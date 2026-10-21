@@ -292,6 +292,54 @@ nav a:hover::after {
       margin-top: 16px;
       font-weight: bold;
     }
+    
+.booking-form {
+  display: grid;
+  gap: 10px;
+  max-width: 480px;
+  margin-top: 28px;
+}
+
+.booking-form label {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #e9d5ff;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #49345e;
+  border-radius: 8px;
+  background: #151019;
+  color: #ffffff;
+  font: inherit;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}
+
+.booking-form .button {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.booking-note {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+#demoMessage {
+  color: #d8b4fe;
+  overflow-wrap: anywhere;
+}
+
 
     footer {
       padding: 25px 8%;
@@ -494,35 +542,110 @@ nav a:hover::after {
       </div>
     </section>
 
-    <section class="booking" id="booking">
-      <div class="section-label">ТВІЙ НАСТУПНИЙ КРОК</div>
-      <h2>Час оновити стиль?</h2>
+    
+<section class="booking" id="booking">
+  <div class="section-label">ТВІЙ НАСТУПНИЙ КРОК</div>
+  <h2>Час оновити стиль?</h2>
 
-      <p>
-        Це демонстраційна сторінка. Реальний запис поки не підключено.
-        Кнопка нижче лише перевіряє роботу інтерфейсу.
-      </p>
+  <p class="booking-intro">
+    Заповни форму, щоб залишити заявку на запис до BLACK LINE.
+  </p>
 
-      <button class="button" id="demoButton" type="button">
-        ПЕРЕВІРИТИ ДЕМО
-      </button>
+  <form id="bookingForm" class="booking-form">
+    <label for="clientName">Твоє ім'я</label>
+    <input
+      id="clientName"
+      name="name"
+      type="text"
+      placeholder="Як до тебе звертатися?"
+      autocomplete="name"
+      required
+    >
 
-      <p id="demoMessage" role="status" aria-live="polite"></p>
-    </section>
+    <label for="clientPhone">Номер телефону</label>
+    <input
+      id="clientPhone"
+      name="phone"
+      type="tel"
+      placeholder="+380..."
+      autocomplete="tel"
+      required
+    >
+
+    <label for="service">Послуга</label>
+    <select id="service" name="service" required>
+      <option value="">Обери послугу</option>
+      <option value="Чоловіча стрижка">Чоловіча стрижка — 400 ₴</option>
+      <option value="Стрижка + борода">Стрижка + борода — 600 ₴</option>
+      <option value="Оформлення бороди">Оформлення бороди — 250 ₴</option>
+    </select>
+
+    <label for="bookingDate">Бажана дата</label>
+    <input
+      id="bookingDate"
+      name="date"
+      type="date"
+      required
+    >
+
+    <label for="bookingTime">Бажаний час</label>
+    <select id="bookingTime" name="time" required>
+      <option value="">Обери час</option>
+      <option>10:00</option>
+      <option>11:00</option>
+      <option>12:00</option>
+      <option>13:00</option>
+      <option>14:00</option>
+      <option>15:00</option>
+      <option>16:00</option>
+      <option>17:00</option>
+      <option>18:00</option>
+      <option>19:00</option>
+    </select>
+
+    <button class="button" type="submit">
+      ЗАЛИШИТИ ЗАЯВКУ
+    </button>
+
+    <p id="demoMessage" role="status" aria-live="polite"></p>
+  </form>
+
+  <p class="booking-note">
+    Демоверсія: заявка поки не надсилається адміністратору.
+  </p>
+</section>
+
   </main>
 
   <footer>
     © 2026 BLACK LINE · Демонстраційний проєкт для навчання
   </footer>
 
-  <script>
-    const demoButton = document.getElementById("demoButton");
-    const demoMessage = document.getElementById("demoMessage");
 
-    demoButton.addEventListener("click", function () {
-      demoMessage.textContent =
-        "Супер! Кнопка працює. Реальний запис можна підключити пізніше.";
-    });
-  </script>
+<script>
+  const bookingForm = document.getElementById("bookingForm");
+  const demoMessage = document.getElementById("demoMessage");
+  const bookingDate = document.getElementById("bookingDate");
+
+  const today = new Date();
+  const localToday = new Date(
+    today.getTime() - today.getTimezoneOffset() * 60000
+  ).toISOString().split("T")[0];
+
+  bookingDate.min = localToday;
+
+  bookingForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(bookingForm);
+    const name = formData.get("name").trim();
+
+    demoMessage.textContent =
+      "Демо успішне, " + name +
+      "! Форма заповнена, але заявка ще не надіслана. " +
+      "Для реального запису потрібно підключити Telegram і пошту.";
+  });
+</script>
+
 </body>
 </html>
