@@ -838,8 +838,19 @@ function updateBookingTimes() {
       return;
     }
 
-   const hour = Number(option.value.split(":")[0]);
+  const hour = Number(option.value.split(":")[0]);
 const slotDate = new Date(selectedDate + "T" + option.value);
+    option.disabled =
+  hour >= closingHour || slotDate <= new Date();
+
+option.disabled =
+  hour >= closingHour || slotDate <= new Date();
+
+option.disabled =
+  hour >= closingHour || slotDate <= new Date();
+
+option.disabled =
+  hour >= closingHour || slotDate <= new Date();
 
 option.disabled =
   hour >= closingHour || slotDate <= new Date();
