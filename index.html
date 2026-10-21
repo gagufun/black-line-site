@@ -238,9 +238,11 @@ nav a:hover::after {
       font-weight: bold;
     }
 
-    .about {
-      background: #171a18;
-    }
+   .about {
+  background: linear-gradient(135deg, #171020, #101010);
+  border-top: 1px solid #33263f;
+  border-bottom: 1px solid #33263f;
+}
 
     .about p, .contact p {
       color: var(--muted);
@@ -263,14 +265,20 @@ nav a:hover::after {
     }
 
     .booking {
-      background: var(--accent);
-      color: #071410;
-    }
+  background:
+    radial-gradient(
+      ellipse at 85% 20%,
+      rgba(168, 85, 247, 0.2),
+      transparent 60%
+    ),
+    linear-gradient(135deg, #1c1427, #101010);
+  color: var(--text);
+  border-top: 1px solid #33263f;
+}
 
     .booking .section-label {
-      color: #10483b;
-    }
-
+  color: #c084fc;
+}
     .booking p {
       max-width: 600px;
     }
