@@ -107,6 +107,7 @@ nav a:hover::after {
     }
 
     
+
 .hero {
   min-height: 76vh;
   display: flex;
@@ -115,14 +116,21 @@ nav a:hover::after {
   position: relative;
   overflow: hidden;
   background:
+    linear-gradient(
+      90deg,
+      rgba(16, 16, 16, 0.98) 0%,і
+      rgba(16, 16, 16, 0.78) 50%,
+      rgba(16, 16, 16, 0.35) 100%
+    ),
     radial-gradient(
       ellipse at 78% 38%,
-      rgba(147, 51, 234, 0.25) 0%,
-      rgba(88, 28, 135, 0.12) 35%,
-      transparent 70%
+      rgba(168, 85, 247, 0.3),
+      transparent 65%
     ),
-    linear-gradient(135deg, #101010, #171020 60%, #101010);
+    url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85")
+      center / cover no-repeat;
 }
+
 
 
     .hero-content {
