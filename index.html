@@ -267,12 +267,7 @@ section {
 
 
 .gallery-item figcaption {
-  padding: 16px;
-  color: #e9d5ff;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-}
+ 
 
 padding: 16px;
   color: #e9d5ff;
@@ -572,6 +567,17 @@ padding: 16px;
         <a class="button" href="#booking">ЗАПИСАТИСЯ</a>
       </div>
     </section>
+    
+<section class="about" id="about">
+  <div class="section-label">ФІЛОСОФІЯ BLACK LINE</div>
+  <h2>Деталі мають значення.</h2>
+  <p>
+    BLACK LINE — концепція сучасного барбершопу для тих,
+    хто цінує якість, атмосферу та увагу до деталей.
+    Ми віримо, що гарний стиль починається з правильного підходу.
+  </p>
+</section>
+
 
     <section id="services">
       <div class="section-label">НАШІ ПОСЛУГИ</div>
@@ -581,19 +587,37 @@ padding: 16px;
         <article class="service">
           <h3>Чоловіча стрижка</h3>
           <p>Індивідуальний підхід до твого стилю.</p>
-          <div class="price">400 ₴</div>
+          
+<div class="price">400 ₴</div>
+<button class="button choose-service" type="button" data-service="Чоловіча стрижка">
+  ОБРАТИ ПОСЛУГУ
+</button>
+
+          <button class="button choose-service" type="button" data-service="Чоловіча стрижка">
+  ОБРАТИ ПОСЛУГУ
+</button>
         </article>
 
         <article class="service">
           <h3>Стрижка + борода</h3>
           <p>Завершений образ і чіткі контури.</p>
           <div class="price">600 ₴</div>
+          
+<button class="button choose-service" type="button" data-service="Стрижка + борода">
+  ОБРАТИ ПОСЛУГУ
+</button>
+
         </article>
 
         <article class="service">
           <h3>Оформлення бороди</h3>
           <p>Форма, симетрія та акуратний вигляд.</p>
           <div class="price">250 ₴</div>
+          
+<button class="button choose-service" type="button" data-service="Оформлення бороди">
+  ОБРАТИ ПОСЛУГУ
+</button>
+
         </article>
       </div>
     </section>
@@ -749,6 +773,18 @@ padding: 16px;
   ).toISOString().split("T")[0];
 
   bookingDate.min = localToday;
+  
+document.querySelectorAll(".choose-service").forEach(function (button) {
+  button.addEventListener("click", function () {
+    const serviceSelect = document.getElementById("service");
+    serviceSelect.value = button.dataset.service;
+
+    document.getElementById("booking").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
 
   bookingForm.addEventListener("submit", function (event) {
     event.preventDefault();
