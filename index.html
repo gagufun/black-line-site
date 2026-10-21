@@ -623,6 +623,20 @@
       <h2>Твій образ — наш підхід.</h2>
 
       <div class="services">
+       <article class="service">
+          <h3>Оформлення бороди</h3>
+          <p>Форма, симетрія та акуратний вигляд.</p>
+          <div class="price">250 ₴</div>
+          <button
+            class="button choose-service"
+            type="button"
+            data-service="Оформлення бороди"
+          >
+          >
+            ОБРАТИ ПОСЛУГУ
+          </button>
+        </article>
+
         <article class="service">
           <h3>Чоловіча стрижка</h3>
           <p>Індивідуальний підхід до твого стилю.</p>
@@ -644,19 +658,6 @@
             class="button choose-service"
             type="button"
             data-service="Стрижка + борода"
-          >
-            ОБРАТИ ПОСЛУГУ
-          </button>
-        </article>
-
-        <article class="service">
-          <h3>Оформлення бороди</h3>
-          <p>Форма, симетрія та акуратний вигляд.</p>
-          <div class="price">250 ₴</div>
-          <button
-            class="button choose-service"
-            type="button"
-            data-service="Оформлення бороди"
           >
             ОБРАТИ ПОСЛУГУ
           </button>
@@ -702,7 +703,7 @@
     </section>
 
     <section id="contact" class="contact">
-      <div class="section-label">ЗАВІТАЙ ДО НАС</div>
+      <div class="section-label">Запрошуємо у наш маленький дім стилю та крааси</div>
       <h2>Чекаємо на тебе.</h2>
 
       <div class="details">
@@ -724,7 +725,7 @@
 
     <section class="booking" id="booking">
       <div class="section-label">ТВІЙ НАСТУПНИЙ КРОК</div>
-      <h2>Час оновити стиль?</h2>
+      <h2>Час змінити свій стиль?</h2>
 
       <p class="booking-intro">
         Заповни форму, щоб залишити заявку на запис до BLACK LINE.
@@ -756,12 +757,12 @@
         <label for="service">Послуга</label>
         <select id="service" name="service" required>
           <option value="">Обери послугу</option>
+          <option value="Оформлення бороди">Оформлення бороди — 250 ₴</option>
           <option value="Чоловіча стрижка">Чоловіча стрижка — 400 ₴</option>
           <option value="Стрижка + борода">Стрижка + борода — 600 ₴</option>
-          <option value="Оформлення бороди">Оформлення бороди — 250 ₴</option>
         </select>
 
-        <label for="bookingDate">Бажана дата</label>
+        <label for="bookingDate">Обрати дату</label>
         <input
           id="bookingDate"
           name="date"
@@ -769,7 +770,7 @@
           required
         >
 
-        <label for="bookingTime">Бажаний час</label>
+        <label for="bookingTime">Час прийомус</label>
         <select id="bookingTime" name="time" required>
           <option value="">Обери час</option>
           <option>10:00</option>
@@ -798,7 +799,7 @@
   </main>
 
   <footer>
-    © 2026 BLACK LINE · Демонстраційний проєкт для навчання
+    © 2026 BLACK LINE · Демонстраційний проєкт 
   </footer>
 
   <script>
